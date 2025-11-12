@@ -1,0 +1,31 @@
+{
+  "name": "billing-tus-network",
+  "version": "1.0.0",
+  "description": "Sistem billing dan manajemen pelanggan untuk TUS Network dengan dashboard admin modern",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "billing",
+    "dashboard",
+    "admin",
+    "isp",
+    "internet",
+    "customers",
+    "invoices",
+    "tabler"
+  ],
+  "author": "TUS Network Development Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/billing-tus-network.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
