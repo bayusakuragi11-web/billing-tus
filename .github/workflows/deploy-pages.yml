@@ -24,6 +24,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Show repository size and file count (debug)
+        run: |
+          echo "Repository root size:";
+          du -sh . || true
+          echo "Total files:";
+          find . -type f | wc -l || true
+
+      - name: Show static folder contents (debug)
+        run: |
+          if [ -d "billingtusnet.bayarinternet.com" ]; then
+            echo "Static folder exists:";
+            du -sh billingtusnet.bayarinternet.com || true
+            echo "Listing top-level files (maxdepth 2):";
+            find billingtusnet.bayarinternet.com -maxdepth 2 -type f -printf '%k KB\t%p\n' | sort -nr || true
+          else
+            echo "Static folder 'billingtusnet.bayarinternet.com' NOT FOUND";
+            ls -la || true
+            exit 1
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
