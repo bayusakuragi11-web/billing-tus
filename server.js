@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 
 /**
  * Simple HTTP Server for Billing System
@@ -64,7 +64,7 @@ const server = http.createServer((req, res) => {
         if (fs.existsSync(candidate)) return candidate;
 
         // Map /assets/* to billingtusnet.bayarinternet.com/assets/*
-        if (p.startsWith('/assets/')) {
+        if (p.startsWith('assets/')) {
             candidate = path.join(__dirname, 'billingtusnet.bayarinternet.com', p.replace(/^\//, ''));
             if (fs.existsSync(candidate)) return candidate;
         }
@@ -162,13 +162,13 @@ const server = http.createServer((req, res) => {
 // Start server
 server.listen(PORT, HOST, () => {
     console.log('');
-    console.log('╔════════════════════════════════════════════════╗');
-    console.log('║   Billing System - Local Development Server    ║');
-    console.log('╚════════════════════════════════════════════════╝');
+    console.log('â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—');
+    console.log('â•‘   Billing System - Local Development Server    â•‘');
+    console.log('â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
     console.log('');
-    console.log(`✓ Server sedang berjalan...`);
-    console.log(`✓ URL: http://${HOST}:${PORT}`);
-    console.log(`✓ Directory: ${__dirname}`);
+    console.log(`âœ“ Server sedang berjalan...`);
+    console.log(`âœ“ URL: http://${HOST}:${PORT}`);
+    console.log(`âœ“ Directory: ${__dirname}`);
     console.log('');
     console.log('Tekan CTRL+C untuk menghentikan server');
     console.log('='.repeat(50));
@@ -178,7 +178,7 @@ server.listen(PORT, HOST, () => {
 // Handle errors
 server.on('error', (err) => {
     if (err.code === 'EADDRINUSE') {
-        console.error(`❌ Error: Port ${PORT} sudah digunakan!`);
+        console.error(`âŒ Error: Port ${PORT} sudah digunakan!`);
         console.error(`Silahkan gunakan port lain atau tutup aplikasi yang menggunakan port ini.`);
         process.exit(1);
     } else {
@@ -190,7 +190,8 @@ server.on('error', (err) => {
 process.on('SIGINT', () => {
     console.log('\n\n' + '='.repeat(50));
     console.log('Server dihentikan oleh user');
-    console.log('Sampai jumpa! 👋');
+    console.log('Sampai jumpa! ðŸ‘‹');
     console.log('='.repeat(50));
     process.exit(0);
 });
+
